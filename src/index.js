@@ -42,14 +42,13 @@ app.post('/image', upload.single('image'),async (req, res) => {
         let widthImg = width? parseInt(width) : 100;
         let heightImg = height? parseInt(height) : 100;
         let qualityImg = quality ? parseInt(quality) : 10;
-        // console.log(widthImg, typeof heightImg, qualityImg,typeof format);
         if(!req.file){
             return res.status(400).json({ error: 'image file is required' });
         }
-        let resizeImage = sharp(req.file.path).resize({widthImg, heightImg}).jpeg({qualityImg});
+        let resizeImage = sharp(req.file.path).resize({ width: widthImg, height: heightImg }).jpeg({ quality: qualityImg });
 
         if(forma){
-            resizeImage = resizeImage.toFormat({forma});
+            resizeImage = resizeImage.toFormat(forma);
         }
         const imageBuffer = await resizeImage.toBuffer();
 
