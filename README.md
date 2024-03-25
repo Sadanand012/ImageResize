@@ -15,7 +15,7 @@ This API allows users to upload images, resize them, change their quality, and c
 1. Clone the repository:
 
     ```
-    git clone [https://github.com/your_username/image-processing-api.git](https://github.com/Sadanand012/ImageResize)
+    git clone [https://github.com/Sadanand012/ImageResize](https://github.com/Sadanand012/ImageResize)
     ```
 
 2. Install dependencies:
